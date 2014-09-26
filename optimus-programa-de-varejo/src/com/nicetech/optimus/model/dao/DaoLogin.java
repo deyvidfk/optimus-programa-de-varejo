@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.logging.Logger;
 import static java.util.logging.Logger.getLogger;
 
-public final class DaoLogin implements DaoInterface {
+public final class DaoLogin implements CRUDInterface {
 
-    private static List<ModelLogin> _login;
+    public static List<ModelLogin> _login;
 
     public static List<ModelLogin> getLogin() {
         return DaoLogin._login;
@@ -16,7 +16,7 @@ public final class DaoLogin implements DaoInterface {
     private final Source CONEXAO_DB;
 
     public DaoLogin() {
-
+        System.out.println("LOGIN INICIALIZADO");
         this.CONEXAO_DB = new Source("security.xml");
         _login = readXml();
     }

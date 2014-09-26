@@ -7,7 +7,7 @@ import java.util.Locale;
 import java.util.logging.Logger;
 import static java.util.logging.Logger.getLogger;
 
-public final class DaoPessoaJuridica implements DaoInterface {
+public final class DaoPessoaJuridica implements CRUDInterface {
 
     private static List<ModelPessoaJuridica> _pessoaJuridica;
 

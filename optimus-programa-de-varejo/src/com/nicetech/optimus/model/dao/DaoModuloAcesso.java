@@ -7,13 +7,12 @@ import java.util.logging.Logger;
 import static java.util.logging.Logger.getLogger;
 
 
-public final class DaoModuloAcesso implements DaoInterface {
+public final class DaoModuloAcesso implements CRUDInterface {
 
     private static List<ModelModuloAcesso> _moduloAcesso;
-
     private final Source CONEXAO_DB;
+    
     public DaoModuloAcesso() {
-
         this.CONEXAO_DB = new Source("db-pessoa-fisica-modulo-acesso.xml");
         _moduloAcesso = (List<ModelModuloAcesso>) readXml();
     }
