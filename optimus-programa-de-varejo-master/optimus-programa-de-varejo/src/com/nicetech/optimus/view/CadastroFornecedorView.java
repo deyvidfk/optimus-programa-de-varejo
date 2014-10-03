@@ -1,40 +1,19 @@
 package com.nicetech.optimus.view;
 
-import java.awt.Color;
 import java.util.logging.Logger;
 import static java.util.logging.Logger.getLogger;
-import javax.swing.JOptionPane;
-import static javax.swing.JOptionPane.showConfirmDialog;
 
 public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
 
     public CadastroFornecedorView() {
         initComponents();
-
         this.getBtnUpdateEmpresa().setVisible(false);
         this.getBtnDeletePJ().setVisible(false);
         this.getTxtID().setVisible(true);
         this.getTxtID().setText(Integer.toString(-1));
         this.getBtnLinkProduto().setVisible(true);
-        this.btnPrint.setVisible(false);
-        this.btnCadProduto.setVisible(false);
-    }
-
-    public void resetForm() {
-        this.getTxtRazaoS().setText("");
-        this.getTxtCnpj().setText("");
-        this.getTxtSetorAt().setText("");
-        this.getTxtBairro().setText("");
-        this.getTxtRua().setText("");
-        this.getTxtNumero().setText("");
-        this.getTxtComplemento().setText("");
-        this.getTxtCep().setText("");
-        this.getTxtCidade().setText("");
-        this.getTxtEstado().setText("");
-        this.getTxtPais().setText("");
-        this.getTxtTelefone().setText("");
-        this.getTxtEmail().setText("");
-        this.getTxtSite().setText("");
+        this.btnPrintCadastro.setVisible(false);
+        this.btnCadastroProduto.setVisible(false);
     }
 
     /**
@@ -49,77 +28,86 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jTabbedDadosCadastrais = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
-        txtRazaoS = new javax.swing.JTextField();
+        txtRazaoSocial = new javax.swing.JTextField();
         txtCnpj = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        txtSetorAt = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
+        lblRazaoSocial = new javax.swing.JLabel();
+        lblCnpj = new javax.swing.JLabel();
+        txtSetorAtuacao = new javax.swing.JTextField();
+        lblSetorAtuacao = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
         labValidacao = new javax.swing.JLabel();
-        btnPrint = new javax.swing.JButton();
-        btnCadProduto = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         txtTelefone = new javax.swing.JTextField();
         txtEmail = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        lblTelefone = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
+        lblSite = new javax.swing.JLabel();
         txtSite = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         txtBairro = new javax.swing.JTextField();
         txtCidade = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        lblBairro = new javax.swing.JLabel();
+        lblRua = new javax.swing.JLabel();
+        lblCidade = new javax.swing.JLabel();
+        lblEstado = new javax.swing.JLabel();
         txtNumero = new javax.swing.JTextField();
         txtRua = new javax.swing.JTextField();
         txtEstado = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
+        lblPais = new javax.swing.JLabel();
         txtPais = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
+        lblCep = new javax.swing.JLabel();
         txtCep = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        lblNumero = new javax.swing.JLabel();
+        lblComplemento = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtComplemento = new javax.swing.JTextArea();
+        jPanel5 = new javax.swing.JPanel();
+        jComboBox1 = new javax.swing.JComboBox();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableFornecedor = new javax.swing.JTable();
-        txtBuscar = new javax.swing.JTextField();
-        btnBuscar = new javax.swing.JButton();
-        btnInsertEmpresa = new javax.swing.JButton();
-        btnUpdateEmpresa = new javax.swing.JButton();
-        btnDeletePJ = new javax.swing.JButton();
+        txtBuscaRegistro = new javax.swing.JTextField();
+        btnBuscaRegistro = new javax.swing.JButton();
+        btnInsertCadastro = new javax.swing.JButton();
+        btnUpdateCadastro = new javax.swing.JButton();
+        btnDeleteCadastro = new javax.swing.JButton();
         btnProximoRegistro = new javax.swing.JButton();
         btnRegistroAnterior = new javax.swing.JButton();
-        jRadioButtonOrdenarPorNome = new javax.swing.JRadioButton();
-        btnPrintAll = new javax.swing.JButton();
+        rbtOrdenaRegistroPorNome = new javax.swing.JRadioButton();
+        btnPrintAllCadastros = new javax.swing.JButton();
+        btnCadastroProduto = new javax.swing.JButton();
+        btnPrintCadastro = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Fornecedor");
+        setTitle("Cadastro de Fornecedor");
         setToolTipText("Cadastro de Fornecedor");
 
-        txtRazaoS.addActionListener(new java.awt.event.ActionListener() {
+        txtRazaoSocial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtRazaoSActionPerformed(evt);
+                txtRazaoSocialActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("* Razão Social");
+        lblRazaoSocial.setText("* Razão Social");
 
-        jLabel2.setText("* CNPJ");
+        lblCnpj.setText("* CNPJ");
 
-        txtSetorAt.addActionListener(new java.awt.event.ActionListener() {
+        txtSetorAtuacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSetorAtActionPerformed(evt);
+                txtSetorAtuacaoActionPerformed(evt);
             }
         });
 
-        jLabel13.setText("Setor de atuação");
+        lblSetorAtuacao.setText("Setor de atuação");
 
         txtID.setEditable(false);
         txtID.addActionListener(new java.awt.event.ActionListener() {
@@ -130,20 +118,6 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
 
         labValidacao.setText("Por favor, preencha os campos marcados com \"*\"");
 
-        btnPrint.setText("Imprimir");
-        btnPrint.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPrintActionPerformed(evt);
-            }
-        });
-
-        btnCadProduto.setText(" Produtos");
-        btnCadProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadProdutoActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -152,50 +126,43 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13)
-                    .addComponent(txtSetorAt, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtRazaoS, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSetorAtuacao)
+                    .addComponent(txtSetorAtuacao, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtRazaoSocial, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblRazaoSocial, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(199, 199, 199)
                         .addComponent(labValidacao, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnPrint, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnCadProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addGap(117, 117, 117))
         );
+
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtCnpj, txtRazaoSocial, txtSetorAtuacao});
+
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(lblRazaoSocial)
                     .addComponent(labValidacao, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtRazaoS, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(jLabel2)
-                        .addGap(6, 6, 6)
-                        .addComponent(txtCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(jLabel13)
-                        .addGap(6, 6, 6)
-                        .addComponent(txtSetorAt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(35, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnPrint)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCadProduto)
-                        .addGap(18, 18, 18))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtRazaoSocial, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(lblCnpj)
+                .addGap(6, 6, 6)
+                .addComponent(txtCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(lblSetorAtuacao)
+                .addGap(6, 6, 6)
+                .addComponent(txtSetorAtuacao, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
+
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtCnpj, txtRazaoSocial, txtSetorAtuacao});
 
         jTabbedDadosCadastrais.addTab("Dados", jPanel2);
 
@@ -205,11 +172,11 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel9.setText("* Telefone");
+        lblTelefone.setText("* Telefone");
 
-        jLabel10.setText("* E-mail");
+        lblEmail.setText("* E-mail");
 
-        jLabel11.setText("Site");
+        lblSite.setText("Site");
 
         txtSite.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -224,13 +191,13 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 803, Short.MAX_VALUE)
+                    .addComponent(txtTelefone)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11))
-                        .addGap(0, 752, Short.MAX_VALUE))
+                            .addComponent(lblTelefone)
+                            .addComponent(lblEmail)
+                            .addComponent(lblSite))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(txtEmail)
                     .addComponent(txtSite))
                 .addContainerGap())
@@ -239,18 +206,18 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel11)
+                .addComponent(lblSite)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtSite, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedDadosCadastrais.addTab("Cotato", jPanel3);
@@ -261,13 +228,13 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel3.setText("Bairro");
+        lblBairro.setText("Bairro");
 
-        jLabel4.setText("Rua");
+        lblRua.setText("Rua");
 
-        jLabel6.setText("Cidade");
+        lblCidade.setText("Cidade");
 
-        jLabel7.setText("Estado");
+        lblEstado.setText("Estado");
 
         txtEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -275,13 +242,13 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel8.setText("Pais");
+        lblPais.setText("Pais");
 
-        jLabel15.setText("CEP");
+        lblCep.setText("CEP");
 
-        jLabel5.setText("Nº");
+        lblNumero.setText("Nº");
 
-        jLabel14.setText("Complemento");
+        lblComplemento.setText("Complemento");
 
         txtComplemento.setColumns(20);
         txtComplemento.setRows(5);
@@ -296,6 +263,21 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblEstado)
+                            .addComponent(lblCidade))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblRua))
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblCep)
+                            .addComponent(lblComplemento)
+                            .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(txtPais, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -303,33 +285,13 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel8))
+                                    .addComponent(lblPais))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
+                                    .addComponent(lblNumero)
                                     .addComponent(txtRua, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel7))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4)))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(202, 202, 202)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(10, 10, 10)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel14)
-                            .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 127, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 663, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -337,9 +299,9 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel15))
+                    .addComponent(lblCidade)
+                    .addComponent(lblBairro)
+                    .addComponent(lblCep))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -348,28 +310,88 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
                         .addComponent(txtCep, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblEstado)
+                    .addComponent(lblRua)
+                    .addComponent(lblComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtRua, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel5))
+                            .addComponent(lblPais)
+                            .addComponent(lblNumero))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtPais, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         jTabbedDadosCadastrais.addTab("Endereço", jPanel4);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel1.setText("Estado");
+
+        jLabel2.setText("Cidade");
+
+        jLabel3.setText("Mesorregião");
+
+        jLabel4.setText("Microrregião");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)))
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(460, Short.MAX_VALUE))
+        );
+
+        jPanel5Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jTextField1, jTextField2, jTextField3});
+
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel1)
+                .addGap(19, 19, 19)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(98, 98, 98))
+        );
+
+        jPanel5Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jTextField1, jTextField2, jTextField3});
+
+        jTabbedDadosCadastrais.addTab("Abrangência", jPanel5);
 
         jScrollPane2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -413,47 +435,47 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
         });
         jScrollPane2.setViewportView(jTableFornecedor);
 
-        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
+        txtBuscaRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscarActionPerformed(evt);
+                txtBuscaRegistroActionPerformed(evt);
             }
         });
-        txtBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtBuscaRegistro.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtBuscarKeyPressed(evt);
+                txtBuscaRegistroKeyPressed(evt);
             }
         });
 
-        btnBuscar.setText("BUSCAR - Nome / CNPJ");
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscaRegistro.setText("BUSCAR - Nome / CNPJ");
+        btnBuscaRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
+                btnBuscaRegistroActionPerformed(evt);
             }
         });
-        btnBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+        btnBuscaRegistro.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                btnBuscarKeyPressed(evt);
+                btnBuscaRegistroKeyPressed(evt);
             }
         });
 
-        btnInsertEmpresa.setText("Salvar");
-        btnInsertEmpresa.addActionListener(new java.awt.event.ActionListener() {
+        btnInsertCadastro.setText("Salvar");
+        btnInsertCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertEmpresaActionPerformed(evt);
+                btnInsertCadastroActionPerformed(evt);
             }
         });
 
-        btnUpdateEmpresa.setText("Salvar");
-        btnUpdateEmpresa.addActionListener(new java.awt.event.ActionListener() {
+        btnUpdateCadastro.setText("Salvar");
+        btnUpdateCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdateEmpresaActionPerformed(evt);
+                btnUpdateCadastroActionPerformed(evt);
             }
         });
 
-        btnDeletePJ.setText("Excluir");
-        btnDeletePJ.addActionListener(new java.awt.event.ActionListener() {
+        btnDeleteCadastro.setText("Excluir");
+        btnDeleteCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeletePJActionPerformed(evt);
+                btnDeleteCadastroActionPerformed(evt);
             }
         });
 
@@ -476,27 +498,41 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
             }
         });
 
-        jRadioButtonOrdenarPorNome.setText("A/Z");
-        jRadioButtonOrdenarPorNome.addActionListener(new java.awt.event.ActionListener() {
+        rbtOrdenaRegistroPorNome.setText("A/Z");
+        rbtOrdenaRegistroPorNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonOrdenarPorNomeActionPerformed(evt);
+                rbtOrdenaRegistroPorNomeActionPerformed(evt);
             }
         });
-        jRadioButtonOrdenarPorNome.addKeyListener(new java.awt.event.KeyAdapter() {
+        rbtOrdenaRegistroPorNome.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jRadioButtonOrdenarPorNomeKeyPressed(evt);
+                rbtOrdenaRegistroPorNomeKeyPressed(evt);
             }
         });
 
-        btnPrintAll.setText("Imprimir Tudo");
-        btnPrintAll.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnPrintAllCadastros.setText("Imprimir Tudo");
+        btnPrintAllCadastros.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnPrintAllMouseClicked(evt);
+                btnPrintAllCadastrosMouseClicked(evt);
             }
         });
-        btnPrintAll.addActionListener(new java.awt.event.ActionListener() {
+        btnPrintAllCadastros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPrintAllActionPerformed(evt);
+                btnPrintAllCadastrosActionPerformed(evt);
+            }
+        });
+
+        btnCadastroProduto.setText(" Produtos");
+        btnCadastroProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastroProdutoActionPerformed(evt);
+            }
+        });
+
+        btnPrintCadastro.setText("Imprimir");
+        btnPrintCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrintCadastroActionPerformed(evt);
             }
         });
 
@@ -505,36 +541,36 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jTabbedDadosCadastrais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(txtBuscar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnBuscar)
-                        .addGap(284, 284, 284)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jRadioButtonOrdenarPorNome)
+                        .addGap(1, 1, 1)
+                        .addComponent(txtBuscaRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnBuscaRegistro)
+                        .addGap(10, 10, 10)
+                        .addComponent(rbtOrdenaRegistroPorNome)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnRegistroAnterior)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnProximoRegistro)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnPrintAll, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnInsertEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnUpdateEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnDeletePJ, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(201, 201, 201))))
+                        .addComponent(btnPrintAllCadastros, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jTabbedDadosCadastrais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnDeleteCadastro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnUpdateCadastro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnInsertCadastro, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(btnPrintCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnCadastroProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jScrollPane2))
+                .addContainerGap())
         );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnBuscaRegistro, btnCadastroProduto, btnDeleteCadastro, btnInsertCadastro, btnPrintAllCadastros, btnPrintCadastro, btnUpdateCadastro});
+
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -543,28 +579,34 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
                         .addContainerGap()
                         .addComponent(jTabbedDadosCadastrais, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(btnUpdateEmpresa)
+                        .addGap(34, 34, 34)
+                        .addComponent(btnUpdateCadastro)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnInsertEmpresa)
+                        .addComponent(btnInsertCadastro)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnDeletePJ)))
+                        .addComponent(btnDeleteCadastro)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnPrintCadastro)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCadastroProduto)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtBuscar)
-                            .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnBuscaRegistro)
+                            .addComponent(txtBuscaRegistro)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnRegistroAnterior)
                             .addComponent(btnProximoRegistro)
-                            .addComponent(jRadioButtonOrdenarPorNome)
-                            .addComponent(btnPrintAll, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(rbtOrdenaRegistroPorNome)
+                            .addComponent(btnPrintAllCadastros, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnBuscaRegistro, btnCadastroProduto, btnDeleteCadastro, btnInsertCadastro, btnPrintAllCadastros, btnPrintCadastro, btnUpdateCadastro});
 
         jTabbedDadosCadastrais.getAccessibleContext().setAccessibleName("Dado");
 
@@ -572,9 +614,10 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -586,13 +629,13 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtRazaoSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRazaoSActionPerformed
+    private void txtRazaoSocialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRazaoSocialActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtRazaoSActionPerformed
+    }//GEN-LAST:event_txtRazaoSocialActionPerformed
 
-    private void txtSetorAtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSetorAtActionPerformed
+    private void txtSetorAtuacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSetorAtuacaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtSetorAtActionPerformed
+    }//GEN-LAST:event_txtSetorAtuacaoActionPerformed
 
     private void txtTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefoneActionPerformed
         // TODO add your handling code here:
@@ -612,66 +655,27 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
 
     private void jTableFornecedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableFornecedorMouseClicked
 
-        /*// Visibilidade dos botões.*/
-        this.btnCadProduto.setVisible(true);
-        this.btnPrint.setVisible(true);
-        this.getBtnLinkProduto().setVisible(true);
-        this.getBtnInsertEmpresa().setVisible(false);
-        this.getBtnInsertEmpresa().setEnabled(false);
-        this.getBtnUpdateEmpresa().setVisible(true);
-        this.getBtnUpdateEmpresa().setEnabled(true);
-        this.getBtnDeletePJ().setVisible(true);
-        this.getBtnDeletePJ().setEnabled(true);
-        /*// end */
-        jTableFornecedor.setSelectionBackground(Color.CYAN);
-        int linha_selecionada = jTableFornecedor.getSelectedRow();
-        this.getTxtCnpj().setText(jTableFornecedor.getValueAt(linha_selecionada, 0).toString());
-        this.getTxtRazaoS().setText(jTableFornecedor.getValueAt(linha_selecionada, 1).toString());
-        this.getTxtSetorAt().setText(jTableFornecedor.getValueAt(linha_selecionada, 2).toString());
-        this.getTxtTelefone().setText(jTableFornecedor.getValueAt(linha_selecionada, 3).toString());
-        this.getTxtEmail().setText(jTableFornecedor.getValueAt(linha_selecionada, 4).toString());
-        this.getTxtSite().setText(jTableFornecedor.getValueAt(linha_selecionada, 5).toString());
-        this.getTxtCidade().setText(jTableFornecedor.getValueAt(linha_selecionada, 6).toString());
-        this.getTxtEstado().setText(jTableFornecedor.getValueAt(linha_selecionada, 7).toString());
-        this.getTxtPais().setText(jTableFornecedor.getValueAt(linha_selecionada, 8).toString());
-        this.getTxtBairro().setText(jTableFornecedor.getValueAt(linha_selecionada, 9).toString());
-        this.getTxtRua().setText(jTableFornecedor.getValueAt(linha_selecionada, 10).toString());
-        this.getTxtNumero().setText(jTableFornecedor.getValueAt(linha_selecionada, 11).toString());
-        this.getTxtComplemento().setText(jTableFornecedor.getValueAt(linha_selecionada, 12).toString());
-        this.getTxtID().setText(jTableFornecedor.getValueAt(linha_selecionada, 13).toString());
     }//GEN-LAST:event_jTableFornecedorMouseClicked
 
-    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+    private void btnBuscaRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaRegistroActionPerformed
 
-    }//GEN-LAST:event_btnBuscarActionPerformed
+    }//GEN-LAST:event_btnBuscaRegistroActionPerformed
 
-    private void btnInsertEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertEmpresaActionPerformed
+    private void btnInsertCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertCadastroActionPerformed
 
-    }//GEN-LAST:event_btnInsertEmpresaActionPerformed
+    }//GEN-LAST:event_btnInsertCadastroActionPerformed
 
-    private void btnUpdateEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateEmpresaActionPerformed
+    private void btnUpdateCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateCadastroActionPerformed
 
-    }//GEN-LAST:event_btnUpdateEmpresaActionPerformed
+    }//GEN-LAST:event_btnUpdateCadastroActionPerformed
 
-    private void btnDeletePJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletePJActionPerformed
+    private void btnDeleteCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCadastroActionPerformed
 
-        int selectedOption = showConfirmDialog(null, "Deseja realmente excluir este cadastro?", "Sistema informa:", JOptionPane.YES_NO_OPTION);
-        if (selectedOption == JOptionPane.YES_NO_OPTION) {
-            int linha = jTableFornecedor.getSelectedRow();
-            //instanceControllerCadastrarFornecedor.delete(linha); // Deleta o registro do xml.
-            resetForm();
-            /*// Visibilidade dos botões.*/
-            this.getBtnInsertEmpresa().setVisible(true);
-            this.getBtnInsertEmpresa().setEnabled(true);
-            this.getBtnUpdateEmpresa().setVisible(false);
-            this.getBtnDeletePJ().setEnabled(false);
-            this.getBtnLinkProduto().setVisible(false);
-        }
-    }//GEN-LAST:event_btnDeletePJActionPerformed
+    }//GEN-LAST:event_btnDeleteCadastroActionPerformed
 
-    private void txtBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscarKeyPressed
+    private void txtBuscaRegistroKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBuscaRegistroKeyPressed
 
-    }//GEN-LAST:event_txtBuscarKeyPressed
+    }//GEN-LAST:event_txtBuscaRegistroKeyPressed
 
     private void btnProximoRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProximoRegistroActionPerformed
 
@@ -682,42 +686,42 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_btnRegistroAnteriorActionPerformed
 
-    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
+    private void txtBuscaRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscaRegistroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarActionPerformed
+    }//GEN-LAST:event_txtBuscaRegistroActionPerformed
 
     private void jScrollPane2ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jScrollPane2ComponentAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jScrollPane2ComponentAdded
 
-    private void btnPrintAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintAllActionPerformed
+    private void btnPrintAllCadastrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintAllCadastrosActionPerformed
 
-    }//GEN-LAST:event_btnPrintAllActionPerformed
+    }//GEN-LAST:event_btnPrintAllCadastrosActionPerformed
 
-    private void btnPrintAllMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPrintAllMouseClicked
-    }//GEN-LAST:event_btnPrintAllMouseClicked
+    private void btnPrintAllCadastrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPrintAllCadastrosMouseClicked
+    }//GEN-LAST:event_btnPrintAllCadastrosMouseClicked
 
-    private void jRadioButtonOrdenarPorNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonOrdenarPorNomeActionPerformed
+    private void rbtOrdenaRegistroPorNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtOrdenaRegistroPorNomeActionPerformed
 
-    }//GEN-LAST:event_jRadioButtonOrdenarPorNomeActionPerformed
+    }//GEN-LAST:event_rbtOrdenaRegistroPorNomeActionPerformed
 
-    private void jRadioButtonOrdenarPorNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jRadioButtonOrdenarPorNomeKeyPressed
+    private void rbtOrdenaRegistroPorNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rbtOrdenaRegistroPorNomeKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButtonOrdenarPorNomeKeyPressed
+    }//GEN-LAST:event_rbtOrdenaRegistroPorNomeKeyPressed
 
-    private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
+    private void btnPrintCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintCadastroActionPerformed
 
-    }//GEN-LAST:event_btnPrintActionPerformed
+    }//GEN-LAST:event_btnPrintCadastroActionPerformed
 
     private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIDActionPerformed
 
-    private void btnCadProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadProdutoActionPerformed
+    private void btnCadastroProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroProdutoActionPerformed
         CadastroProdutoView frmCadastroProduto = new CadastroProdutoView(this);
         getDesktopPane().add(frmCadastroProduto);
         moveToBack();
-    }//GEN-LAST:event_btnCadProdutoActionPerformed
+    }//GEN-LAST:event_btnCadastroProdutoActionPerformed
 
     private void jScrollPane2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane2MouseClicked
         // TODO add your handling code here:
@@ -727,46 +731,55 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnProximoRegistroMouseClicked
 
-    private void btnBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscarKeyPressed
+    private void btnBuscaRegistroKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscaRegistroKeyPressed
 
-    }//GEN-LAST:event_btnBuscarKeyPressed
+    }//GEN-LAST:event_btnBuscaRegistroKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnCadProduto;
-    private javax.swing.JButton btnDeletePJ;
-    private javax.swing.JButton btnInsertEmpresa;
-    private javax.swing.JButton btnPrint;
-    private javax.swing.JButton btnPrintAll;
+    private javax.swing.JButton btnBuscaRegistro;
+    private javax.swing.JButton btnCadastroProduto;
+    private javax.swing.JButton btnDeleteCadastro;
+    private javax.swing.JButton btnInsertCadastro;
+    private javax.swing.JButton btnPrintAllCadastros;
+    private javax.swing.JButton btnPrintCadastro;
     private javax.swing.JButton btnProximoRegistro;
     private javax.swing.JButton btnRegistroAnterior;
-    private javax.swing.JButton btnUpdateEmpresa;
+    private javax.swing.JButton btnUpdateCadastro;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButtonOrdenarPorNome;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedDadosCadastrais;
     private javax.swing.JTable jTableFornecedor;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel labValidacao;
+    private javax.swing.JLabel lblBairro;
+    private javax.swing.JLabel lblCep;
+    private javax.swing.JLabel lblCidade;
+    private javax.swing.JLabel lblCnpj;
+    private javax.swing.JLabel lblComplemento;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblEstado;
+    private javax.swing.JLabel lblNumero;
+    private javax.swing.JLabel lblPais;
+    private javax.swing.JLabel lblRazaoSocial;
+    private javax.swing.JLabel lblRua;
+    private javax.swing.JLabel lblSetorAtuacao;
+    private javax.swing.JLabel lblSite;
+    private javax.swing.JLabel lblTelefone;
+    private javax.swing.JRadioButton rbtOrdenaRegistroPorNome;
     private javax.swing.JTextField txtBairro;
-    private javax.swing.JTextField txtBuscar;
+    private javax.swing.JTextField txtBuscaRegistro;
     private javax.swing.JTextField txtCep;
     private javax.swing.JTextField txtCidade;
     private javax.swing.JTextField txtCnpj;
@@ -776,155 +789,147 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtNumero;
     private javax.swing.JTextField txtPais;
-    private javax.swing.JTextField txtRazaoS;
+    private javax.swing.JTextField txtRazaoSocial;
     private javax.swing.JTextField txtRua;
-    private javax.swing.JTextField txtSetorAt;
+    private javax.swing.JTextField txtSetorAtuacao;
     private javax.swing.JTextField txtSite;
     private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 
-    public javax.swing.JButton getBtnBuscar() {
-        return btnBuscar;
-    }
-
-    public void setBtnBuscar(javax.swing.JButton btnBuscar) {
-        this.btnBuscar = btnBuscar;
-    }
-
     public javax.swing.JButton getBtnDeletePJ() {
-        return btnDeletePJ;
+        return btnDeleteCadastro;
     }
 
     public void setBtnDeletePJ(javax.swing.JButton btnDeletePJ) {
-        this.btnDeletePJ = btnDeletePJ;
+        this.btnDeleteCadastro = btnDeletePJ;
     }
 
     public javax.swing.JButton getBtnInsertEmpresa() {
-        return btnInsertEmpresa;
+        return btnInsertCadastro;
     }
 
     public void setBtnInsertEmpresa(javax.swing.JButton btnInsertEmpresa) {
-        this.btnInsertEmpresa = btnInsertEmpresa;
+        this.btnInsertCadastro = btnInsertEmpresa;
     }
 
     public javax.swing.JButton getBtnUpdateEmpresa() {
-        return btnUpdateEmpresa;
+        return btnUpdateCadastro;
     }
 
     public void setBtnUpdateEmpresa(javax.swing.JButton btnUpdateEmpresa) {
-        this.btnUpdateEmpresa = btnUpdateEmpresa;
+        this.btnUpdateCadastro = btnUpdateEmpresa;
     }
 
     public javax.swing.JLabel getjLabel1() {
-        return jLabel1;
+        return lblRazaoSocial;
     }
 
     public void setjLabel1(javax.swing.JLabel jLabel1) {
-        this.jLabel1 = jLabel1;
+        this.lblRazaoSocial = jLabel1;
     }
 
     public javax.swing.JLabel getjLabel10() {
-        return jLabel10;
+        return lblEmail;
     }
 
     public void setjLabel10(javax.swing.JLabel jLabel10) {
-        this.jLabel10 = jLabel10;
+        this.lblEmail = jLabel10;
     }
 
     public javax.swing.JLabel getjLabel11() {
-        return jLabel11;
+        return lblSite;
     }
 
     public void setjLabel11(javax.swing.JLabel jLabel11) {
-        this.jLabel11 = jLabel11;
+        this.lblSite = jLabel11;
     }
 
     public javax.swing.JLabel getjLabel13() {
-        return jLabel13;
+        return lblSetorAtuacao;
     }
 
     public void setjLabel13(javax.swing.JLabel jLabel13) {
-        this.jLabel13 = jLabel13;
+        this.lblSetorAtuacao = jLabel13;
     }
 
     public javax.swing.JLabel getjLabel14() {
-        return jLabel14;
+        return lblComplemento;
     }
 
     public void setjLabel14(javax.swing.JLabel jLabel14) {
-        this.jLabel14 = jLabel14;
+        this.lblComplemento = jLabel14;
     }
 
     public javax.swing.JLabel getjLabel15() {
-        return jLabel15;
+        return lblCep;
     }
 
     public void setjLabel15(javax.swing.JLabel jLabel15) {
-        this.jLabel15 = jLabel15;
+        this.lblCep = jLabel15;
     }
 
     public javax.swing.JLabel getjLabel2() {
-        return jLabel2;
+        return lblCnpj;
     }
 
     public void setjLabel2(javax.swing.JLabel jLabel2) {
-        this.jLabel2 = jLabel2;
+        this.lblCnpj = jLabel2;
     }
 
     public javax.swing.JLabel getjLabel3() {
-        return jLabel3;
+        return lblBairro;
     }
 
     public void setjLabel3(javax.swing.JLabel jLabel3) {
-        this.jLabel3 = jLabel3;
+        this.lblBairro = jLabel3;
     }
 
     public javax.swing.JLabel getjLabel4() {
-        return jLabel4;
+        return lblRua;
     }
 
     public void setjLabel4(javax.swing.JLabel jLabel4) {
-        this.jLabel4 = jLabel4;
+        this.lblRua = jLabel4;
     }
 
     public javax.swing.JLabel getjLabel5() {
-        return jLabel5;
+        return lblNumero;
     }
 
     public void setjLabel5(javax.swing.JLabel jLabel5) {
-        this.jLabel5 = jLabel5;
+        this.lblNumero = jLabel5;
     }
 
     public javax.swing.JLabel getjLabel6() {
-        return jLabel6;
+        return lblCidade;
     }
 
     public void setjLabel6(javax.swing.JLabel jLabel6) {
-        this.jLabel6 = jLabel6;
+        this.lblCidade = jLabel6;
     }
 
     public javax.swing.JLabel getjLabel7() {
-        return jLabel7;
+        return lblEstado;
     }
 
     public void setjLabel7(javax.swing.JLabel jLabel7) {
-        this.jLabel7 = jLabel7;
+        this.lblEstado = jLabel7;
     }
 
     public javax.swing.JLabel getjLabel8() {
-        return jLabel8;
+        return lblPais;
     }
 
     public void setjLabel8(javax.swing.JLabel jLabel8) {
-        this.jLabel8 = jLabel8;
+        this.lblPais = jLabel8;
     }
 
     public javax.swing.JLabel getjLabel9() {
-        return jLabel9;
+        return lblTelefone;
     }
 
     public void setjLabel9(javax.swing.JLabel jLabel9) {
-        this.jLabel9 = jLabel9;
+        this.lblTelefone = jLabel9;
     }
 
     public javax.swing.JPanel getjPanel1() {
@@ -1000,11 +1005,11 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
     }
 
     public javax.swing.JTextField getTxtBuscar() {
-        return txtBuscar;
+        return txtBuscaRegistro;
     }
 
     public void setTxtBuscar(javax.swing.JTextField txtBuscar) {
-        this.txtBuscar = txtBuscar;
+        this.txtBuscaRegistro = txtBuscar;
     }
 
     public javax.swing.JTextField getTxtCep() {
@@ -1079,28 +1084,12 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
         this.txtPais = txtPais;
     }
 
-    public javax.swing.JTextField getTxtRazaoS() {
-        return txtRazaoS;
-    }
-
-    public void setTxtRazaoS(javax.swing.JTextField txtRazaoS) {
-        this.txtRazaoS = txtRazaoS;
-    }
-
     public javax.swing.JTextField getTxtRua() {
         return txtRua;
     }
 
     public void setTxtRua(javax.swing.JTextField txtRua) {
         this.txtRua = txtRua;
-    }
-
-    public javax.swing.JTextField getTxtSetorAt() {
-        return txtSetorAt;
-    }
-
-    public void setTxtSetorAt(javax.swing.JTextField txtSetorAt) {
-        this.txtSetorAt = txtSetorAt;
     }
 
     public javax.swing.JTextField getTxtSite() {
@@ -1136,11 +1125,11 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
     }
 
     public javax.swing.JButton getBtnLinkProduto() {
-        return btnPrintAll;
+        return btnPrintAllCadastros;
     }
 
     public void setBtnLinkProduto(javax.swing.JButton btnLinkProduto) {
-        this.btnPrintAll = btnLinkProduto;
+        this.btnPrintAllCadastros = btnLinkProduto;
     }
 
     public javax.swing.JButton getBtnProximoRegistro() {

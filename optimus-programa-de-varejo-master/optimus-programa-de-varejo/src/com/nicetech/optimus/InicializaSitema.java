@@ -6,6 +6,7 @@ import com.nicetech.optimus.model.bo.UserDefault1;
 import com.nicetech.optimus.model.vo.ModelLogin;
 import com.nicetech.optimus.view.LoginView;
 import com.nicetech.optimus.view.MDIView;
+import java.awt.Color;
 import java.awt.Dimension;
 import static java.lang.Thread.sleep;
 import java.util.logging.Level;
@@ -37,7 +38,7 @@ public final class InicializaSitema {
         private final ImageIcon image;
         private final JLabel jLabel;
         private final JProgressBar barra;
-        private final String LOGOTIPO_DSELL = "dsell.png";
+        private final String LOGOTIPO_DSELL = "logo-5.png";
         
         public Sistema() {
             
@@ -49,11 +50,14 @@ public final class InicializaSitema {
             image = new ImageIcon(this.getClass().getResource(LOGOTIPO_DSELL));
             jLabel.setIcon(image);
             barra = new JProgressBar();
-            barra.setPreferredSize(new Dimension(480, 10));
+            barra.setPreferredSize(new Dimension(1300, 5));
             
             this.getContentPane().setLayout(absoluto);
             this.getContentPane().add(jLabel, absimage);
             this.getContentPane().add(barra, absbarra);
+            this.getContentPane().setBackground(Color.WHITE);
+            this.setOpacity(0.5f);
+  
             
             new Thread() {
                 @Override
@@ -63,7 +67,7 @@ public final class InicializaSitema {
                         getBarra().setValue(i);
                         i++;
                         try {
-                            sleep(5);
+                            sleep(20);
                         } catch (InterruptedException ex) {
                             getLogger(Sistema.class.getName()).log(Level.SEVERE, null, ex);
                         }

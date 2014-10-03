@@ -17,7 +17,6 @@ public class ModelPessoaFisica implements InterfaceModelContato, InterfaceModelE
         this.id = new GerarID().getId();
     }
 
-    private String idUser;
     private String id;
     private String apelido;
     private String cpf;
@@ -56,9 +55,7 @@ public class ModelPessoaFisica implements InterfaceModelContato, InterfaceModelE
 
     @Override
     public void setEmail(String email) {
-
         this.email = email;
-
     }
 
     @RequiredValidation(Required = true, label = "CPF", MaximumValue = 50, MinimumValue = 1)
@@ -82,9 +79,9 @@ public class ModelPessoaFisica implements InterfaceModelContato, InterfaceModelE
     }
 
     public void setRg(String rg) {
-        if (!rg.isEmpty()) {
+
             this.rg = rg;
-        }
+
     }
 
     /**
@@ -101,9 +98,9 @@ public class ModelPessoaFisica implements InterfaceModelContato, InterfaceModelE
      * @param nome
      */
     public void setNome(String nome) {
-        if (!nome.isEmpty()) {
+
             this.nome = nome;
-        }
+
     }
 
     /**
@@ -128,8 +125,7 @@ public class ModelPessoaFisica implements InterfaceModelContato, InterfaceModelE
         return id;
     }
 
-    public void setId(String id) {
-
+    private void setId(String id) {
         this.id = id;
     }
 
@@ -258,18 +254,5 @@ public class ModelPessoaFisica implements InterfaceModelContato, InterfaceModelE
         this.rua = rua;
     }
 
-    /**
-     * @return the idUser
-     */
-    public String getIdUser() {
-        return idUser;
-    }
-
-    /**
-     * @param idUser the idUser to set
-     */
-    public void setIdUser(String idUser) {
-        this.idUser = idUser;
-    }
     private static final Logger LOG = getLogger(ModelPessoaFisica.class.getName());
 }

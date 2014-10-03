@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.nicetech.optimus.controller;
 
 import com.nicetech.optimus.model.bo.ModuloAcesso;
 import com.nicetech.optimus.model.bo.LoginBO;
 import com.nicetech.optimus.model.vo.ModelLogin;
 import com.nicetech.optimus.view.CadastroLoginView;
+
 import java.io.UnsupportedEncodingException;
 import java.security.GeneralSecurityException;
 import javax.swing.JOptionPane;

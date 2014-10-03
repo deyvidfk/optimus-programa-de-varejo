@@ -2,6 +2,7 @@ package com.nicetech.optimus.view;
 
 import com.nicetech.optimus.controller.MDIController;
 import com.nicetech.optimus.model.bo.ConfigLayout;
+import java.awt.Color;
 import static java.lang.System.exit;
 import java.util.List;
 import java.util.logging.Level;
@@ -54,6 +55,7 @@ public final class MDIView extends javax.swing.JFrame {
         jDesktopPane1 = new javax.swing.JDesktopPane();
         desktopPane = new javax.swing.JDesktopPane();
         lblDadosSessao = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         exitMenuItem = new javax.swing.JMenuItem();
@@ -63,6 +65,7 @@ public final class MDIView extends javax.swing.JFrame {
         menuPj = new javax.swing.JMenuItem();
         menuPf = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
         jMenuRelatorio = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -77,6 +80,10 @@ public final class MDIView extends javax.swing.JFrame {
         lblDadosSessao.setText("Dados da Sessao");
         desktopPane.add(lblDadosSessao);
         lblDadosSessao.setBounds(1050, 10, 170, 30);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/nicetech/optimus/logo-2.png"))); // NOI18N
+        desktopPane.add(jLabel1);
+        jLabel1.setBounds(10, -10, 510, 220);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -174,6 +181,14 @@ public final class MDIView extends javax.swing.JFrame {
         });
         jMenuCadastro.add(jMenuItem7);
 
+        jMenuItem8.setText("Cliente");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        jMenuCadastro.add(jMenuItem8);
+
         menuBar.add(jMenuCadastro);
 
         jMenuRelatorio.setText("Relatório");
@@ -211,7 +226,7 @@ public final class MDIView extends javax.swing.JFrame {
         jMenuSistema.setText("Sistema");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem1.setText("Criar registro");
+        jMenuItem1.setText("Ajuda");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -260,9 +275,9 @@ public final class MDIView extends javax.swing.JFrame {
     }//GEN-LAST:event_menuPjActionPerformed
 
     private void menuPfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPfActionPerformed
-        CadastroClienteView cadastroClienteView = new CadastroClienteView();
-        getDesktopPane().add(cadastroClienteView);
-        cadastroClienteView.setVisible(rootPaneCheckingEnabled);
+        CadastroUsuarioView cadastroUsuarioViewView = new CadastroUsuarioView();
+        getDesktopPane().add(cadastroUsuarioViewView);
+        cadastroUsuarioViewView.setVisible(rootPaneCheckingEnabled);
         this.setLocationRelativeTo(null);
 
     }//GEN-LAST:event_menuPfActionPerformed
@@ -310,11 +325,19 @@ public final class MDIView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        CadastroClienteView cadastroClienteView = new CadastroClienteView();
+        getDesktopPane().add(cadastroClienteView);
+        cadastroClienteView.setVisible(rootPaneCheckingEnabled);
+        this.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenuCadastro;
     private javax.swing.JMenu jMenuConsulta;
     private javax.swing.JMenuItem jMenuItem1;
@@ -324,6 +347,7 @@ public final class MDIView extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenu jMenuRelatorio;
     private javax.swing.JMenu jMenuSistema;
     private javax.swing.JPanel jPanel1;

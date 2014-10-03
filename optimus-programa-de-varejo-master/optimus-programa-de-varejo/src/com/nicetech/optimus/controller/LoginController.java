@@ -25,11 +25,11 @@ public class LoginController {
     }
 
     public ModelLogin checkLogin(String username, String pass) {
-
+        DaoLogin loginDAO = new DaoLogin();
         try {
-            for (int i = 0; i < DaoLogin.getLogin().size(); i++) {
-                if (DaoLogin.getLogin().get(i).getUsername().equals(username) && DaoLogin.getLogin().get(i).getPass().equals(pass)) {
-                    return DaoLogin.getLogin().get(i);
+            for (int i = 0; i < loginDAO.getLogin().size(); i++) {
+                if (loginDAO.getLogin().get(i).getUsername().equals(username) && loginDAO.getLogin().get(i).getPass().equals(pass)) {
+                    return loginDAO.getLogin().get(i);
                 }
             }
         } catch (IOException | GeneralSecurityException e) {
