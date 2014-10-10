@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 import static java.util.logging.Logger.getLogger;
 
 
-public final class DaoModuloAcesso implements CRUDInterface {
+public final class DaoModuloAcesso implements CRUDStrategy {
 
     private static List<ModelModuloAcesso> _moduloAcesso;
     private final Source CONEXAO_DB;

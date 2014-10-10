@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.logging.Logger;
 import static java.util.logging.Logger.getLogger;
 
-public final class DaoSessao implements CRUDInterface {
+public final class DaoSessao implements CRUDStrategy {
 
     private static List<ModelSessao> _sessao;
 

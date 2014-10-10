@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 import static java.util.logging.Logger.getLogger;
 
 
-public final class DaoPessoaFisica implements CRUDInterface {
+public final class DaoPessoaFisica implements CRUDStrategy {
 
     private static List<ModelPessoaFisica> _pessoaJuridica;
 

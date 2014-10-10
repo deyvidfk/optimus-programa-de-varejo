@@ -74,6 +74,8 @@ public final class MDIView extends javax.swing.JFrame {
         jMenuSistema = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         subMenuModuloAcesso = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -244,6 +246,18 @@ public final class MDIView extends javax.swing.JFrame {
 
         menuBar.add(jMenuSistema);
 
+        jMenu1.setText("Estoque");
+
+        jMenuItem9.setText("Entrada");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem9);
+
+        menuBar.add(jMenu1);
+
         setJMenuBar(menuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -332,12 +346,20 @@ public final class MDIView extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        CadastroEntradaEstoqueView cadastroEntradaEstoqueView = new CadastroEntradaEstoqueView();
+        getDesktopPane().add(cadastroEntradaEstoqueView);
+        cadastroEntradaEstoqueView.setVisible(rootPaneCheckingEnabled);
+        this.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenuCadastro;
     private javax.swing.JMenu jMenuConsulta;
     private javax.swing.JMenuItem jMenuItem1;
@@ -348,6 +370,7 @@ public final class MDIView extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JMenu jMenuRelatorio;
     private javax.swing.JMenu jMenuSistema;
     private javax.swing.JPanel jPanel1;

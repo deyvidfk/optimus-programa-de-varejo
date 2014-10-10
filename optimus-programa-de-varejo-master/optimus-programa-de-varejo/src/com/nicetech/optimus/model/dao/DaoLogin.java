@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.logging.Logger;
 import static java.util.logging.Logger.getLogger;
 
-public final class DaoLogin implements CRUDInterface {
+public final class DaoLogin implements CRUDStrategy {
 
     public static List<ModelLogin> _login;
 

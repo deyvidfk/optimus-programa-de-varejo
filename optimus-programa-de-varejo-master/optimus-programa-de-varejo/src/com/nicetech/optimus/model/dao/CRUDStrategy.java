@@ -2,7 +2,7 @@ package com.nicetech.optimus.model.dao;
 
 import java.util.List;
 
-public interface CRUDInterface {
+public interface CRUDStrategy {
 
     public abstract void createXml(List<?> data);
 
