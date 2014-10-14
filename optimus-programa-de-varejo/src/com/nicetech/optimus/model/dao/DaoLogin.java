@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.logging.Logger;
 import static java.util.logging.Logger.getLogger;
 
-public final class DaoLogin implements CRUDInterface {
+public final class DaoLogin implements CRUDStrategy {
 
     public static List<ModelLogin> _login;
 
@@ -16,8 +16,7 @@ public final class DaoLogin implements CRUDInterface {
     private final Source CONEXAO_DB;
 
     public DaoLogin() {
-        System.out.println("LOGIN INICIALIZADO");
-        this.CONEXAO_DB = new Source("security.xml");
+        this.CONEXAO_DB = new Source(XMLSource.OPTMUSDB_LOGIN);
         _login = readXml();
     }
 

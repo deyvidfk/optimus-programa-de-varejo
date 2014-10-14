@@ -7,7 +7,7 @@ import java.util.Locale;
 import java.util.logging.Logger;
 import static java.util.logging.Logger.getLogger;
 
-public final class DaoPessoaJuridica implements CRUDInterface {
+public final class DaoPessoaJuridica implements CRUDStrategy {
 
     private static List<ModelPessoaJuridica> _pessoaJuridica;
 
@@ -44,7 +44,7 @@ public final class DaoPessoaJuridica implements CRUDInterface {
 
     public DaoPessoaJuridica() {
 
-        this.CONEXAO_DB = new Source("db-pessoa-juridica.xml");
+        this.CONEXAO_DB = new Source(XMLSource.OPTMUSDB_EMPRESA);
         DaoPessoaJuridica._pessoaJuridica = readXml();
     }
 

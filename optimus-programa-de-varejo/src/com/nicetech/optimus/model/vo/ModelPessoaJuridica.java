@@ -2,6 +2,7 @@ package com.nicetech.optimus.model.vo;
 
 import com.nicetech.optimus.model.InterfaceModelContato;
 import com.nicetech.optimus.model.InterfaceModelEndereco;
+import com.nicetech.optimus.utils.GerarID;
 import com.nicetech.optimus.utils.Regex;
 import com.nicetech.optimus.utils.anotacao.RegularExpressionValidator;
 import com.nicetech.optimus.utils.anotacao.RequiredValidation;
@@ -15,8 +16,6 @@ public class ModelPessoaJuridica implements InterfaceModelContato, InterfaceMode
     private String nome;
     private String cnpj;
     private String setorDeAtuacao;
-    private int qtdProduto;
-    private int quant;
     private String pais;
     private String estado;
     private String cidade;
@@ -28,6 +27,10 @@ public class ModelPessoaJuridica implements InterfaceModelContato, InterfaceMode
     private String telefone;
     private String email;
     private String site;
+
+    public ModelPessoaJuridica() {
+        this.id =  this.id = new GerarID().getId();
+    }
 
     @RequiredValidation(Required = true, label = "NOME", MaximumValue = 50, MinimumValue = 1)
     @RegularExpressionValidator(ValidationExpression = Regex.QUALQUER_CARACTER, Label = "Nome", RegexErrorMessage = "Nome Inválido", EnableErrorMessage = true)
@@ -72,31 +75,11 @@ public class ModelPessoaJuridica implements InterfaceModelContato, InterfaceMode
         return id;
     }
 
-    public void setId(String id) {
-
+    private void setId(String id) {
         this.id = id;
-
     }
 
-    public int getQtdProduto() {
-        return qtdProduto;
-    }
-
-    public void setQtdProduto(int qtdProduto) {
-        if (qtdProduto >= 0) {
-            this.qtdProduto = qtdProduto;
-        }
-    }
-
-    public int getQuant() {
-        return quant;
-    }
-
-    public void setQuant(int quant) {
-        if (quant >= 0) {
-            this.quant = quant;
-        }
-    }
+ 
 
     @RequiredValidation(Required = true, label = "E-MAIL", MaximumValue = 50, MinimumValue = 1)
     @RegularExpressionValidator(ValidationExpression = Regex.EMAIL, Label = "E-mail", RegexErrorMessage = "E-mail Inválido", EnableErrorMessage = true)

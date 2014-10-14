@@ -2,6 +2,7 @@ package com.nicetech.optimus.model.vo;
 
 import com.nicetech.optimus.model.InterfaceModelContato;
 import com.nicetech.optimus.model.InterfaceModelEndereco;
+import com.nicetech.optimus.utils.GerarID;
 import com.nicetech.optimus.utils.Regex;
 import com.nicetech.optimus.utils.anotacao.RegularExpressionValidator;
 import com.nicetech.optimus.utils.anotacao.RequiredValidation;
@@ -12,9 +13,11 @@ import static java.util.logging.Logger.getLogger;
 
 public class ModelPessoaFisica implements InterfaceModelContato, InterfaceModelEndereco {
 
-    private String idUser;
+    public ModelPessoaFisica() {
+        this.id = new GerarID().getId();
+    }
+
     private String id;
-    private int bonus;
     private String apelido;
     private String cpf;
     private String rg;
@@ -52,9 +55,7 @@ public class ModelPessoaFisica implements InterfaceModelContato, InterfaceModelE
 
     @Override
     public void setEmail(String email) {
-
         this.email = email;
-
     }
 
     @RequiredValidation(Required = true, label = "CPF", MaximumValue = 50, MinimumValue = 1)
@@ -78,9 +79,9 @@ public class ModelPessoaFisica implements InterfaceModelContato, InterfaceModelE
     }
 
     public void setRg(String rg) {
-        if (!rg.isEmpty()) {
+
             this.rg = rg;
-        }
+
     }
 
     /**
@@ -97,9 +98,9 @@ public class ModelPessoaFisica implements InterfaceModelContato, InterfaceModelE
      * @param nome
      */
     public void setNome(String nome) {
-        if (!nome.isEmpty()) {
+
             this.nome = nome;
-        }
+
     }
 
     /**
@@ -124,20 +125,10 @@ public class ModelPessoaFisica implements InterfaceModelContato, InterfaceModelE
         return id;
     }
 
-    public void setId(String id) {
-
+    private void setId(String id) {
         this.id = id;
     }
 
-    public int getBonus() {
-        return bonus;
-    }
-
-    public void setBonus(int bonus) {
-        if (bonus > 0) {
-            this.bonus = bonus;
-        }
-    }
 
     @Override
     public String getSite() {
@@ -263,18 +254,5 @@ public class ModelPessoaFisica implements InterfaceModelContato, InterfaceModelE
         this.rua = rua;
     }
 
-    /**
-     * @return the idUser
-     */
-    public String getIdUser() {
-        return idUser;
-    }
-
-    /**
-     * @param idUser the idUser to set
-     */
-    public void setIdUser(String idUser) {
-        this.idUser = idUser;
-    }
     private static final Logger LOG = getLogger(ModelPessoaFisica.class.getName());
 }

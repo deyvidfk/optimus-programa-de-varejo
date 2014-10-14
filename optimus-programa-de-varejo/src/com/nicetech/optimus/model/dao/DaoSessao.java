@@ -5,14 +5,14 @@ import java.util.List;
 import java.util.logging.Logger;
 import static java.util.logging.Logger.getLogger;
 
-public final class DaoSessao implements CRUDInterface {
+public final class DaoSessao implements CRUDStrategy {
 
     private static List<ModelSessao> _sessao;
 
     private final Source CONEXAO_DB;
 
     public DaoSessao() {
-        this.CONEXAO_DB = new Source("db-sessao.xml");
+        this.CONEXAO_DB = new Source(XMLSource.OPTMUSDB_SESSAO);
         _sessao = readXml();
     }
 

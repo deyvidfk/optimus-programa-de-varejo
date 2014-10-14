@@ -21,7 +21,6 @@ public class ModelLogin {
     private String id;
     private String username;
     private String pass;
-    private String email;
     private List<ModelModuloAcesso> modulo;
 
     /**
@@ -72,19 +71,6 @@ public class ModelLogin {
         this.pass = encrypt(pass);
     }
 
-    /**
-     * @return the email
-     */
-    public String getEmail() {
-        return email;
-    }
-
-    /**
-     * @param email the email to set
-     */
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     /**
      * @return the modulo

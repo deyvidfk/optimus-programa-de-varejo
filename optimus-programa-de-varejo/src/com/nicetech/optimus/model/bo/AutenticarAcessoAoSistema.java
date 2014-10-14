@@ -1,19 +1,16 @@
 package com.nicetech.optimus.model.bo;
 
-import java.util.logging.Logger;
-import static java.util.logging.Logger.getLogger;
+import com.nicetech.optimus.model.vo.ModelLogin;
 
 
 public class AutenticarAcessoAoSistema {
 
-    private final CadastrarLogin login;
 
-    public AutenticarAcessoAoSistema() {
-        this.login = new CadastrarLogin();
-    }
 
-   /* public ModelLogin autenticaLogin(String username, String pass) {
 
+
+    public ModelLogin checkLogin(String username, String pass) {
+/*
         try {
             for (int i = 0; i < login.getLogin().size(); i++) {
                 if (login.getLogin().get(i).getUsername().equals(username) && login.getLogin().get(i).getPass().equals(pass)) {
@@ -24,7 +21,8 @@ public class AutenticarAcessoAoSistema {
             showMessageDialog(null, e.getMessage());
             getLogger(Resource.class.getName()).log(Level.SEVERE, null, e);
         }
+     */
         return null;
-    }*/
-    private static final Logger LOG = getLogger(CadastrarLogin.class.getName());
+    }
+    //private static final Logger LOG = getLogger(CadastrarLogin.class.getName());
 }

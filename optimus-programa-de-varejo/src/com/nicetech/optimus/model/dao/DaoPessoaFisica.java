@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 import static java.util.logging.Logger.getLogger;
 
 
-public final class DaoPessoaFisica implements CRUDInterface {
+public final class DaoPessoaFisica implements CRUDStrategy {
 
     private static List<ModelPessoaFisica> _pessoaJuridica;
 
@@ -18,7 +18,7 @@ public final class DaoPessoaFisica implements CRUDInterface {
 
     public DaoPessoaFisica() {
 
-        this.CONEXAO_DB = new Source("db-pessoa-fisica.xml");
+        this.CONEXAO_DB = new Source(XMLSource.OPTMUSDB_USUARIO);
         DaoPessoaFisica._pessoaJuridica = readXml();
     }
 

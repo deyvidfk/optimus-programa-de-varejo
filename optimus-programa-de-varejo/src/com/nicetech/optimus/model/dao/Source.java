@@ -28,7 +28,7 @@ public class Source {
      *
      * @param filename
      */
-    public Source(String filename) {
+    public Source(XMLSource filename) {
         this.XSTREAM = new XStream();
 
         String path = Source.class.getProtectionDomain().getCodeSource().getLocation().getPath();
