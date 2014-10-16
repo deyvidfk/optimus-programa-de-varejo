@@ -1,13 +1,8 @@
 package com.nicetech.optimus.model.bo;
 
-import com.nicetech.optimus.model.bo.Menu;
 import com.nicetech.optimus.controller.LoginController;
-import com.nicetech.optimus.model.bo.ModuloAcesso;
-import com.nicetech.optimus.model.bo.LoginBO;
-import com.nicetech.optimus.model.bo.MensagensDoSistema;
-import com.nicetech.optimus.model.bo.UsuarioBO;
 import com.nicetech.optimus.model.dao.DaoPessoaFisica;
-import com.nicetech.optimus.model.vo.ModelLogin;
+import com.nicetech.optimus.model.vo.*;
 import com.nicetech.optimus.model.vo.ModelPessoaFisica;
 import com.nicetech.optimus.utils.GerarID;
 import java.io.UnsupportedEncodingException;
@@ -45,17 +40,23 @@ public class UserDefault1 {
             user.setNome("ADM");
             user.setRg("12.123.123-1");
             user.setCpf("000.000.000-00");
-            user.setTelefone("(11) 0000-0000");
-            user.setEmail("exemplo@exemplo.com");
-            user.setSite("exemplo.com.br");
-            user.setCidade("São Paulo");
-            user.setEstado("SP");
-            user.setPais("Brasil");
-            user.setBairro("JD");
-            user.setRua("Rua");
-            user.setNumero("0");
-            user.setComplemento("complem.");
-            user.setCep("04872-290");
+            
+            ModelContato cont = new ModelContato();
+            
+            cont.setTelefone("(11) 0000-0000");
+            cont.setEmail("exemplo@exemplo.com");
+            cont.setSite("exemplo.com.br");
+            user.setContato(cont);
+            ModelEndereco end = new ModelEndereco();
+            end.setCidade("São Paulo");
+            end.setEstado("SP");
+            end.setPais("Brasil");
+            end.setBairro("JD");
+            end.setRua("Rua");
+            end.setNumero("0");
+            end.setComplemento("complem.");
+            end.setCep("04872-290");
+            user.setEndereco(end);
 
             ModelLogin loginModel = new ModelLogin();
             loginModel.setId(user.getId());

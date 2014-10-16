@@ -1,13 +1,17 @@
 package com.nicetech.optimus.view;
 
+import com.nicetech.optimus.controller.ProdutoController;
+import java.io.UnsupportedEncodingException;
+import java.security.GeneralSecurityException;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import static java.util.logging.Logger.getLogger;
 
 public final class CadastroProdutoView extends javax.swing.JInternalFrame {
 
-    public CadastroProdutoView(CadastroFornecedorView Frm) {
 
-        initComponents();
+    CadastroProdutoView() {
+         initComponents();
     }
 
     /**
@@ -420,7 +424,11 @@ public final class CadastroProdutoView extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtGarantiaActionPerformed
 
     private void btnInsertCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertCadastroActionPerformed
-
+        try {
+            new ProdutoController(this).cadastrar();
+        } catch (GeneralSecurityException | UnsupportedEncodingException ex) {
+            Logger.getLogger(CadastroProdutoView.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnInsertCadastroActionPerformed
 
     private void cmbFiltroCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbFiltroCategoriaActionPerformed

@@ -718,9 +718,9 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtIDActionPerformed
 
     private void btnCadastroProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroProdutoActionPerformed
-        CadastroProdutoView frmCadastroProduto = new CadastroProdutoView(this);
-        getDesktopPane().add(frmCadastroProduto);
-        moveToBack();
+       // CadastroProdutoView frmCadastroProduto = new CadastroProdutoView(this);
+       // getDesktopPane().add(frmCadastroProduto);
+       // moveToBack();
     }//GEN-LAST:event_btnCadastroProdutoActionPerformed
 
     private void jScrollPane2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane2MouseClicked

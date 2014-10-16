@@ -66,6 +66,8 @@ public final class MDIView extends javax.swing.JFrame {
         menuPf = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
         jMenuRelatorio = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -190,6 +192,22 @@ public final class MDIView extends javax.swing.JFrame {
             }
         });
         jMenuCadastro.add(jMenuItem8);
+
+        jMenuItem10.setText("Funcionario");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        jMenuCadastro.add(jMenuItem10);
+
+        jMenuItem11.setText("Produto");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        jMenuCadastro.add(jMenuItem11);
 
         menuBar.add(jMenuCadastro);
 
@@ -353,6 +371,20 @@ public final class MDIView extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        CadastroFuncionarioView cadastroFuncionarioView = new CadastroFuncionarioView();
+        getDesktopPane().add(cadastroFuncionarioView);
+        cadastroFuncionarioView.setVisible(rootPaneCheckingEnabled);
+        this.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        CadastroProdutoView cadastroProdutoView  = new CadastroProdutoView();
+        getDesktopPane().add(cadastroProdutoView);
+        cadastroProdutoView.setVisible(rootPaneCheckingEnabled);
+        this.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenuItem exitMenuItem;
@@ -363,6 +395,8 @@ public final class MDIView extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuCadastro;
     private javax.swing.JMenu jMenuConsulta;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;

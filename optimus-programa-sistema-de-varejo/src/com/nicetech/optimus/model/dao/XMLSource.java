@@ -11,7 +11,7 @@ package com.nicetech.optimus.model.dao;
  */
 public enum XMLSource {
 
-    OPTMUSDB_USUARIO("optimos-source-usuario.xml"), OPTMUSDB_MODULO_ACESSO("optimos-source-moduloacesso.xml"), OPTMUSDB_SESSAO("optimos-source-sessao.xml"), OPTMUSDB_LOGIN("optimos-source-login.xml"), OPTMUSDB_EMPRESA("optimos-source-empresa.xml");
+    OPTMUSDB_USUARIO("optimos-source-usuario.xml"), OPTMUSDB_PRODUTO("optimos-source-produto.xml"),OPTMUSDB_FUNCIONARIO("optimos-source-funcionario.xml"), OPTMUSDB_MODULO_ACESSO("optimos-source-moduloacesso.xml"), OPTMUSDB_SESSAO("optimos-source-sessao.xml"), OPTMUSDB_LOGIN("optimos-source-login.xml"), OPTMUSDB_EMPRESA("optimos-source-empresa.xml");
 
     private final String fileName;
 
