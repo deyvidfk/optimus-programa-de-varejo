@@ -1,3 +1,5 @@
 # for projects that use Waf for building: http://code.google.com/p/waf/
 .waf-*
 .lock-*
+/optimus-programa-de-varejo/nbproject/private/
+/optimus-programa-de-varejo-master/optimus-programa-de-varejo/nbproject/private/
