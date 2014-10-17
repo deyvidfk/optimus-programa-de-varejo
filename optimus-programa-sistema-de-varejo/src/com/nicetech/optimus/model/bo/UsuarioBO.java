@@ -12,6 +12,7 @@ import com.nicetech.optimus.model.vo.ModelPessoaFisica;
 import static com.nicetech.optimus.utils.ValidaForm.isValid;
 import java.util.logging.Logger;
 import static java.util.logging.Logger.getLogger;
+import javax.swing.JTextField;
 
 /**
  *
@@ -30,5 +31,11 @@ public class UsuarioBO {
     }
 
     private static final Logger LOG = getLogger(LoginBO.class.getName());
+
+    public boolean cadastrarUsuario(String idFuncionario, JTextField txtLogin, JTextField txtSenha, String privilegio) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+  
 
 }

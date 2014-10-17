@@ -7,6 +7,7 @@ public enum Regex {
      *//**
      * * String qualquer caractere é aceito
      */
+    
     QUALQUER_CARACTER("^([^<]|<[^>]*$)*$"),
     /**
      * * Nome e Sobrenome
@@ -32,6 +33,10 @@ public enum Regex {
     /**
      * * E-MAIL: EXEMPLO@EXEMPLO.COM
      */
+    
+    
+    URL("/^((http|https|ftp|ftps):\\/\\/)?([a-z0-9\\-]+\\.)?[a-z0-9\\-]+\\.[a-z0-9]{2,4}(\\.[a-z0-9]{2,4})?(\\/.*)?$/i"),
+    
     // EMAIL("^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$"),
     EMAIL("^[\\w!#\\$%&'\\*\\+\\-/=\\?\\^`\\{\\|\\}~]+(\\.[\\w!#\\$%&'\\*\\+\\-/=\\?\\^`\\{\\|\\}~]+)*@[a-zA-Z0-9]+([\\-]?[a-zA-Z0-9])+(\\.[a-zA-Z0-9]+([\\-]?[a-zA-Z0-9]){1,})+$"),
     /**

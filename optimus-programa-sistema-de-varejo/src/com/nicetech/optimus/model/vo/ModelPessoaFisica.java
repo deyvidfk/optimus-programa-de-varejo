@@ -8,20 +8,28 @@ import com.nicetech.optimus.utils.jTable.Tabela;
 import java.util.logging.Logger;
 import static java.util.logging.Logger.getLogger;
 
-public class ModelPessoaFisica {
+public  class ModelPessoaFisica {
+
+    public static Logger getLOG() {
+        return LOG;
+    }
+
+    public static void setLOG(Logger aLOG) {
+        LOG = aLOG;
+    }
 
     public ModelPessoaFisica() {
         this.id = new GerarID().getId();
     }
 
-    private String id;
-    private String apelido;
-    private String cpf;
-    private String rg;
-    private String nome;
-    private Integer idade;
-    private ModelEndereco endereco;
-    private ModelContato contato;
+    protected String id;
+    protected String apelido;
+    protected String cpf;
+    protected String rg;
+    protected String nome;
+    protected Integer idade;
+    protected ModelEndereco endereco;
+    protected ModelContato contato;
 
     public String getApelido() {
         return apelido;
@@ -49,7 +57,7 @@ public class ModelPessoaFisica {
     @RequiredValidation(Required = true, label = "RG", MaximumValue = 50, MinimumValue = 1)
     @RegularExpressionValidator(ValidationExpression = Regex.RG, Label = "RG", RegexErrorMessage = "RG Inválido")
     @Tabela(Coluna = "RG", Indice = 1)
-    public String getRg() {
+   public  String getRg() {
         return rg;
     }
 
@@ -104,7 +112,7 @@ public class ModelPessoaFisica {
         this.id = id;
     }
 
-    private static final Logger LOG = getLogger(ModelPessoaFisica.class.getName());
+    protected static Logger LOG = getLogger(ModelPessoaFisica.class.getName());
 
     public ModelEndereco getEndereco() {
         return endereco;

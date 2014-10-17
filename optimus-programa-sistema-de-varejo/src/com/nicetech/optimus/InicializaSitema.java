@@ -1,5 +1,6 @@
 package com.nicetech.optimus;
 
+import com.nicetech.optimus.model.bo.FuncionarioBO;
 import com.nicetech.optimus.model.bo.ModuloAcesso;
 import com.nicetech.optimus.model.bo.Sessao;
 import com.nicetech.optimus.model.bo.UserDefault1;
@@ -93,6 +94,7 @@ public final class InicializaSitema {
                             frmMDIView.pack();
                             frmMDIView.setVisible(true);
                             frmMDIView.setLocationRelativeTo(null);
+                            
                         }                        
                     }
                 }

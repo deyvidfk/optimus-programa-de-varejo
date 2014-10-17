@@ -42,7 +42,7 @@ public class Source {
             getLogger(Resource.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        this.filename = relativePath + filename;
+        this.filename = relativePath + filename.getFileName();
     }
 
     /**

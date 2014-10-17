@@ -3,8 +3,13 @@ package com.nicetech.optimus.model.bo;
 import com.nicetech.optimus.model.dao.DaoProduto;
 import com.nicetech.optimus.model.vo.ModelProduto;
 import static com.nicetech.optimus.utils.ValidaForm.isValid;
+import java.util.List;
 
 public class ProdutoBO {
+
+    public static List<ModelProduto> getProdutos() {
+        return DaoProduto.getProdutos();
+    }
     
     private final DaoProduto dao;
 
@@ -32,6 +37,18 @@ public class ProdutoBO {
             return true;
         }
         return false;
+    }
+
+    public List<?> searchRecord(String idFornecedor) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public List<?> searchRecordFiltro(String Output, String idFornecedor) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public List<?> searchRecord(String Output, String idFornecedor) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

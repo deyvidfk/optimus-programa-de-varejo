@@ -1,6 +1,7 @@
 package com.nicetech.optimus.model.bo;
 
 import com.nicetech.optimus.controller.LoginController;
+import com.nicetech.optimus.model.dao.DaoFuncionario;
 import com.nicetech.optimus.model.dao.DaoPessoaFisica;
 import com.nicetech.optimus.model.vo.*;
 import com.nicetech.optimus.model.vo.ModelPessoaFisica;
@@ -31,7 +32,7 @@ public class UserDefault1 {
 
         DaoPessoaFisica pf = new DaoPessoaFisica();
 
-        return !pf.getUsuario().isEmpty();
+        return !pf.readXml().isEmpty();
     }
 
     public void criaDadosDoUsuarioDefault() {

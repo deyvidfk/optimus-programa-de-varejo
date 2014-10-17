@@ -8,10 +8,10 @@ import static java.util.logging.Logger.getLogger;
 
 public final class DaoPessoaFisica implements CRUDStrategy {
 
-    private static List<ModelPessoaFisica> _pessoaJuridica;
+    public static List<ModelPessoaFisica> _pf;
 
     public static List<ModelPessoaFisica> getUsuario() {
-        return DaoPessoaFisica._pessoaJuridica;
+        return DaoPessoaFisica._pf;
     }
 
     private final Source CONEXAO_DB;
@@ -19,7 +19,7 @@ public final class DaoPessoaFisica implements CRUDStrategy {
     public DaoPessoaFisica() {
 
         this.CONEXAO_DB = new Source(XMLSource.OPTMUSDB_USUARIO);
-        DaoPessoaFisica._pessoaJuridica = readXml();
+        DaoPessoaFisica._pf = readXml();
     }
 
     @Override
@@ -33,17 +33,17 @@ public final class DaoPessoaFisica implements CRUDStrategy {
     }
 
     public String getNomePeloId(int id) {
-        return _pessoaJuridica.get(id).getNome();
+        return _pf.get(id).getNome();
     }
 
     public ModelPessoaFisica getUserPeloId(int id) {
-        return _pessoaJuridica.get(id);
+        return _pf.get(id);
     }
 
     @Override
     public void deleteXml(int id) {
-        _pessoaJuridica.remove(id);
-        updateXml(_pessoaJuridica);
+        _pf.remove(id);
+        updateXml(_pf);
     }
 
     @Override

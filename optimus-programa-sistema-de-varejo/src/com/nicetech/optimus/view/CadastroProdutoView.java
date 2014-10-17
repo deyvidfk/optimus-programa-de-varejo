@@ -1,5 +1,8 @@
 package com.nicetech.optimus.view;
 
+import com.nicetech.optimus.controller.CadastroLoginController;
+import com.nicetech.optimus.controller.JtableProduto;
+import com.nicetech.optimus.controller.JtableUsuario;
 import com.nicetech.optimus.controller.ProdutoController;
 import java.io.UnsupportedEncodingException;
 import java.security.GeneralSecurityException;
@@ -9,9 +12,16 @@ import static java.util.logging.Logger.getLogger;
 
 public final class CadastroProdutoView extends javax.swing.JInternalFrame {
 
+    private ProdutoController instanceControllerCadastroLoginController;
+    private JtableProduto instanceControllerJtable;
 
     CadastroProdutoView() {
-         initComponents();
+        this.instanceControllerCadastroLoginController = new ProdutoController(this);
+        instanceControllerJtable = new JtableProduto(this);
+
+        initComponents();
+
+        instanceControllerJtable.popularJtable();
     }
 
     /**
@@ -97,6 +107,12 @@ public final class CadastroProdutoView extends javax.swing.JInternalFrame {
         txtCor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCorActionPerformed(evt);
+            }
+        });
+
+        txtPreco.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPrecoFocusLost(evt);
             }
         });
 
@@ -457,6 +473,10 @@ public final class CadastroProdutoView extends javax.swing.JInternalFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtPrecoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPrecoFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPrecoFocusLost
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;

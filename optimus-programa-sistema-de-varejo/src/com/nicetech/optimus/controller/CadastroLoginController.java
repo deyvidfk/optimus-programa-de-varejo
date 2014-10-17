@@ -17,6 +17,8 @@ public class CadastroLoginController {
         this.frmCadastroLogin = frmCadastroLogin;
     }
 
+    
+    
     public void cadastrarLogin() throws GeneralSecurityException, UnsupportedEncodingException {
         ModelLogin loginModel = new ModelLogin();
         loginModel.setUsername(frmCadastroLogin.getTxtUserName().getText());
@@ -29,5 +31,13 @@ public class CadastroLoginController {
         } else {
             JOptionPane.showMessageDialog(frmCadastroLogin, "Erro ao cadastrar Login.");
         }
+    }
+
+    public int numeroDeRegistros() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void delete(int linha) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

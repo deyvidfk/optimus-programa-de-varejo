@@ -1,14 +1,25 @@
 package com.nicetech.optimus.view;
 
+import com.nicetech.optimus.utils.Regex;
+import com.nicetech.optimus.utils.ValidaForm;
+import java.awt.Color;
 import java.util.logging.Logger;
 import static java.util.logging.Logger.getLogger;
 
 public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
 
+    public static Logger getLOG() {
+        return LOG;
+    }
+
+    public static void setLOG(Logger aLOG) {
+        LOG = aLOG;
+    }
+
     public CadastroFornecedorView() {
         initComponents();
         this.getBtnUpdateEmpresa().setVisible(false);
-        this.getBtnDeletePJ().setVisible(false);
+
         this.getTxtID().setVisible(true);
         this.getTxtID().setText(Integer.toString(-1));
         this.getBtnLinkProduto().setVisible(true);
@@ -97,6 +108,12 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
             }
         });
 
+        txtCnpj.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtCnpjFocusLost(evt);
+            }
+        });
+
         lblRazaoSocial.setText("* Razão Social");
 
         lblCnpj.setText("* CNPJ");
@@ -171,6 +188,17 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
                 txtTelefoneActionPerformed(evt);
             }
         });
+        txtTelefone.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtTelefoneFocusLost(evt);
+            }
+        });
+
+        txtEmail.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtEmailFocusLost(evt);
+            }
+        });
 
         lblTelefone.setText("* Telefone");
 
@@ -181,6 +209,11 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
         txtSite.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSiteActionPerformed(evt);
+            }
+        });
+        txtSite.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtSiteFocusLost(evt);
             }
         });
 
@@ -245,6 +278,12 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
         lblPais.setText("Pais");
 
         lblCep.setText("CEP");
+
+        txtCep.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtCepFocusLost(evt);
+            }
+        });
 
         lblNumero.setText("Nº");
 
@@ -719,8 +758,8 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
 
     private void btnCadastroProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroProdutoActionPerformed
        // CadastroProdutoView frmCadastroProduto = new CadastroProdutoView(this);
-       // getDesktopPane().add(frmCadastroProduto);
-       // moveToBack();
+        // getDesktopPane().add(frmCadastroProduto);
+        // moveToBack();
     }//GEN-LAST:event_btnCadastroProdutoActionPerformed
 
     private void jScrollPane2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane2MouseClicked
@@ -734,6 +773,71 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
     private void btnBuscaRegistroKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscaRegistroKeyPressed
 
     }//GEN-LAST:event_btnBuscaRegistroKeyPressed
+
+    private void txtCnpjFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCnpjFocusLost
+        if (!this.txtCnpj.getText().isEmpty()) {
+            if (ValidaForm.isValid(this.txtCnpj.getText().trim(), true, Regex.CNPJ) == false) {
+                this.getjTabbedDadosCadastrais().setSelectedIndex(0);
+                lblCnpj.setText("* CNPJ inválido");
+                lblCnpj.setForeground(Color.RED);
+            } else {
+                lblCnpj.setText("* CNPJ completo");
+                lblCnpj.setForeground(Color.green);
+            }
+        }
+    }//GEN-LAST:event_txtCnpjFocusLost
+
+    private void txtTelefoneFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTelefoneFocusLost
+        if (!this.txtTelefone.getText().isEmpty()) {
+            if (ValidaForm.isValid(this.txtTelefone.getText().trim(), true, Regex.TELEFONE) == false) {
+                this.getjTabbedDadosCadastrais().setSelectedIndex(0);
+                lblTelefone.setText("* TELEFONE inválido");
+                lblTelefone.setForeground(Color.RED);
+            } else {
+                lblTelefone.setText("* TELEFONE completo");
+                lblTelefone.setForeground(Color.green);
+            }
+        }
+    }//GEN-LAST:event_txtTelefoneFocusLost
+
+    private void txtEmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtEmailFocusLost
+        if (!this.txtEmail.getText().isEmpty()) {
+            if (ValidaForm.isValid(this.txtEmail.getText().trim(), true, Regex.EMAIL) == false) {
+                this.getjTabbedDadosCadastrais().setSelectedIndex(0);
+                lblEmail.setText("* TELEFONE inválido");
+                lblEmail.setForeground(Color.RED);
+            } else {
+                lblEmail.setText("* TELEFONE completo");
+                lblEmail.setForeground(Color.green);
+            }
+        }
+    }//GEN-LAST:event_txtEmailFocusLost
+
+    private void txtSiteFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtSiteFocusLost
+        if (!this.txtSite.getText().isEmpty()) {
+            if (ValidaForm.isValid(this.txtSite.getText().trim(), true, Regex.URL) == false) {
+                this.getjTabbedDadosCadastrais().setSelectedIndex(0);
+                lblSite.setText("* Site inválido");
+                lblSite.setForeground(Color.RED);
+            } else {
+                lblSite.setText("* Site completo");
+                lblSite.setForeground(Color.green);
+            }
+        }
+    }//GEN-LAST:event_txtSiteFocusLost
+
+    private void txtCepFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCepFocusLost
+        if (!this.txtCep.getText().isEmpty()) {
+            if (ValidaForm.isValid(this.txtCep.getText().trim(), true, Regex.CEP) == false) {
+                this.getjTabbedDadosCadastrais().setSelectedIndex(0);
+                lblCep.setText("* CEP inválido");
+                lblCep.setForeground(Color.RED);
+            } else {
+                lblCep.setText("* CEP completo");
+                lblCep.setForeground(Color.green);
+            }
+        }
+    }//GEN-LAST:event_txtCepFocusLost
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscaRegistro;
@@ -796,140 +900,136 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 
-    public javax.swing.JButton getBtnDeletePJ() {
-        return btnDeleteCadastro;
-    }
-
     public void setBtnDeletePJ(javax.swing.JButton btnDeletePJ) {
-        this.btnDeleteCadastro = btnDeletePJ;
+        this.setBtnDeleteCadastro(btnDeletePJ);
     }
 
     public javax.swing.JButton getBtnInsertEmpresa() {
-        return btnInsertCadastro;
+        return getBtnInsertCadastro();
     }
 
     public void setBtnInsertEmpresa(javax.swing.JButton btnInsertEmpresa) {
-        this.btnInsertCadastro = btnInsertEmpresa;
+        this.setBtnInsertCadastro(btnInsertEmpresa);
     }
 
     public javax.swing.JButton getBtnUpdateEmpresa() {
-        return btnUpdateCadastro;
+        return getBtnUpdateCadastro();
     }
 
     public void setBtnUpdateEmpresa(javax.swing.JButton btnUpdateEmpresa) {
-        this.btnUpdateCadastro = btnUpdateEmpresa;
+        this.setBtnUpdateCadastro(btnUpdateEmpresa);
     }
 
     public javax.swing.JLabel getjLabel1() {
-        return lblRazaoSocial;
+        return getLblRazaoSocial();
     }
 
     public void setjLabel1(javax.swing.JLabel jLabel1) {
-        this.lblRazaoSocial = jLabel1;
+        this.setLblRazaoSocial(jLabel1);
     }
 
     public javax.swing.JLabel getjLabel10() {
-        return lblEmail;
+        return getLblEmail();
     }
 
     public void setjLabel10(javax.swing.JLabel jLabel10) {
-        this.lblEmail = jLabel10;
+        this.setLblEmail(jLabel10);
     }
 
     public javax.swing.JLabel getjLabel11() {
-        return lblSite;
+        return getLblSite();
     }
 
     public void setjLabel11(javax.swing.JLabel jLabel11) {
-        this.lblSite = jLabel11;
+        this.setLblSite(jLabel11);
     }
 
     public javax.swing.JLabel getjLabel13() {
-        return lblSetorAtuacao;
+        return getLblSetorAtuacao();
     }
 
     public void setjLabel13(javax.swing.JLabel jLabel13) {
-        this.lblSetorAtuacao = jLabel13;
+        this.setLblSetorAtuacao(jLabel13);
     }
 
     public javax.swing.JLabel getjLabel14() {
-        return lblComplemento;
+        return getLblComplemento();
     }
 
     public void setjLabel14(javax.swing.JLabel jLabel14) {
-        this.lblComplemento = jLabel14;
+        this.setLblComplemento(jLabel14);
     }
 
     public javax.swing.JLabel getjLabel15() {
-        return lblCep;
+        return getLblCep();
     }
 
     public void setjLabel15(javax.swing.JLabel jLabel15) {
-        this.lblCep = jLabel15;
+        this.setLblCep(jLabel15);
     }
 
     public javax.swing.JLabel getjLabel2() {
-        return lblCnpj;
+        return getLblCnpj();
     }
 
     public void setjLabel2(javax.swing.JLabel jLabel2) {
-        this.lblCnpj = jLabel2;
+        this.setLblCnpj(jLabel2);
     }
 
     public javax.swing.JLabel getjLabel3() {
-        return lblBairro;
+        return getLblBairro();
     }
 
     public void setjLabel3(javax.swing.JLabel jLabel3) {
-        this.lblBairro = jLabel3;
+        this.setLblBairro(jLabel3);
     }
 
     public javax.swing.JLabel getjLabel4() {
-        return lblRua;
+        return getLblRua();
     }
 
     public void setjLabel4(javax.swing.JLabel jLabel4) {
-        this.lblRua = jLabel4;
+        this.setLblRua(jLabel4);
     }
 
     public javax.swing.JLabel getjLabel5() {
-        return lblNumero;
+        return getLblNumero();
     }
 
     public void setjLabel5(javax.swing.JLabel jLabel5) {
-        this.lblNumero = jLabel5;
+        this.setLblNumero(jLabel5);
     }
 
     public javax.swing.JLabel getjLabel6() {
-        return lblCidade;
+        return getLblCidade();
     }
 
     public void setjLabel6(javax.swing.JLabel jLabel6) {
-        this.lblCidade = jLabel6;
+        this.setLblCidade(jLabel6);
     }
 
     public javax.swing.JLabel getjLabel7() {
-        return lblEstado;
+        return getLblEstado();
     }
 
     public void setjLabel7(javax.swing.JLabel jLabel7) {
-        this.lblEstado = jLabel7;
+        this.setLblEstado(jLabel7);
     }
 
     public javax.swing.JLabel getjLabel8() {
-        return lblPais;
+        return getLblPais();
     }
 
     public void setjLabel8(javax.swing.JLabel jLabel8) {
-        this.lblPais = jLabel8;
+        this.setLblPais(jLabel8);
     }
 
     public javax.swing.JLabel getjLabel9() {
-        return lblTelefone;
+        return getLblTelefone();
     }
 
     public void setjLabel9(javax.swing.JLabel jLabel9) {
-        this.lblTelefone = jLabel9;
+        this.setLblTelefone(jLabel9);
     }
 
     public javax.swing.JPanel getjPanel1() {
@@ -981,11 +1081,11 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
     }
 
     public javax.swing.JTabbedPane getjTabbedPane1() {
-        return jTabbedDadosCadastrais;
+        return getjTabbedDadosCadastrais();
     }
 
     public void setjTabbedPane1(javax.swing.JTabbedPane jTabbedPane1) {
-        this.jTabbedDadosCadastrais = jTabbedPane1;
+        this.setjTabbedDadosCadastrais(jTabbedPane1);
     }
 
     public javax.swing.JTable getjTableFornecedor() {
@@ -1005,11 +1105,11 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
     }
 
     public javax.swing.JTextField getTxtBuscar() {
-        return txtBuscaRegistro;
+        return getTxtBuscaRegistro();
     }
 
     public void setTxtBuscar(javax.swing.JTextField txtBuscar) {
-        this.txtBuscaRegistro = txtBuscar;
+        this.setTxtBuscaRegistro(txtBuscar);
     }
 
     public javax.swing.JTextField getTxtCep() {
@@ -1125,11 +1225,11 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
     }
 
     public javax.swing.JButton getBtnLinkProduto() {
-        return btnPrintAllCadastros;
+        return getBtnPrintAllCadastros();
     }
 
     public void setBtnLinkProduto(javax.swing.JButton btnLinkProduto) {
-        this.btnPrintAllCadastros = btnLinkProduto;
+        this.setBtnPrintAllCadastros(btnLinkProduto);
     }
 
     public javax.swing.JButton getBtnProximoRegistro() {
@@ -1148,5 +1248,245 @@ public final class CadastroFornecedorView extends javax.swing.JInternalFrame {
         this.btnRegistroAnterior = btnRegistroAnterior;
     }
 
-    private static final Logger LOG = getLogger(CadastroFornecedorView.class.getName());
+    private static Logger LOG = getLogger(CadastroFornecedorView.class.getName());
+
+    public javax.swing.JButton getBtnBuscaRegistro() {
+        return btnBuscaRegistro;
+    }
+
+    public void setBtnBuscaRegistro(javax.swing.JButton btnBuscaRegistro) {
+        this.btnBuscaRegistro = btnBuscaRegistro;
+    }
+
+    public javax.swing.JButton getBtnCadastroProduto() {
+        return btnCadastroProduto;
+    }
+
+    public void setBtnCadastroProduto(javax.swing.JButton btnCadastroProduto) {
+        this.btnCadastroProduto = btnCadastroProduto;
+    }
+
+    public javax.swing.JButton getBtnDeleteCadastro() {
+        return btnDeleteCadastro;
+    }
+
+    public void setBtnDeleteCadastro(javax.swing.JButton btnDeleteCadastro) {
+        this.btnDeleteCadastro = btnDeleteCadastro;
+    }
+
+    public javax.swing.JButton getBtnInsertCadastro() {
+        return btnInsertCadastro;
+    }
+
+    public void setBtnInsertCadastro(javax.swing.JButton btnInsertCadastro) {
+        this.btnInsertCadastro = btnInsertCadastro;
+    }
+
+    public javax.swing.JButton getBtnPrintAllCadastros() {
+        return btnPrintAllCadastros;
+    }
+
+    public void setBtnPrintAllCadastros(javax.swing.JButton btnPrintAllCadastros) {
+        this.btnPrintAllCadastros = btnPrintAllCadastros;
+    }
+
+    public javax.swing.JButton getBtnPrintCadastro() {
+        return btnPrintCadastro;
+    }
+
+    public void setBtnPrintCadastro(javax.swing.JButton btnPrintCadastro) {
+        this.btnPrintCadastro = btnPrintCadastro;
+    }
+
+    public javax.swing.JButton getBtnUpdateCadastro() {
+        return btnUpdateCadastro;
+    }
+
+    public void setBtnUpdateCadastro(javax.swing.JButton btnUpdateCadastro) {
+        this.btnUpdateCadastro = btnUpdateCadastro;
+    }
+
+    public javax.swing.JComboBox getjComboBox1() {
+        return jComboBox1;
+    }
+
+    public void setjComboBox1(javax.swing.JComboBox jComboBox1) {
+        this.jComboBox1 = jComboBox1;
+    }
+
+    public javax.swing.JPanel getjPanel5() {
+        return jPanel5;
+    }
+
+    public void setjPanel5(javax.swing.JPanel jPanel5) {
+        this.jPanel5 = jPanel5;
+    }
+
+    public javax.swing.JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    public void setjTextField1(javax.swing.JTextField jTextField1) {
+        this.jTextField1 = jTextField1;
+    }
+
+    public javax.swing.JTextField getjTextField2() {
+        return jTextField2;
+    }
+
+    public void setjTextField2(javax.swing.JTextField jTextField2) {
+        this.jTextField2 = jTextField2;
+    }
+
+    public javax.swing.JTextField getjTextField3() {
+        return jTextField3;
+    }
+
+    public void setjTextField3(javax.swing.JTextField jTextField3) {
+        this.jTextField3 = jTextField3;
+    }
+
+    public javax.swing.JLabel getLblBairro() {
+        return lblBairro;
+    }
+
+    public void setLblBairro(javax.swing.JLabel lblBairro) {
+        this.lblBairro = lblBairro;
+    }
+
+    public javax.swing.JLabel getLblCep() {
+        return lblCep;
+    }
+
+    public void setLblCep(javax.swing.JLabel lblCep) {
+        this.lblCep = lblCep;
+    }
+
+    public javax.swing.JLabel getLblCidade() {
+        return lblCidade;
+    }
+
+    public void setLblCidade(javax.swing.JLabel lblCidade) {
+        this.lblCidade = lblCidade;
+    }
+
+    public javax.swing.JLabel getLblCnpj() {
+        return lblCnpj;
+    }
+
+    public void setLblCnpj(javax.swing.JLabel lblCnpj) {
+        this.lblCnpj = lblCnpj;
+    }
+
+    public javax.swing.JLabel getLblComplemento() {
+        return lblComplemento;
+    }
+
+    public void setLblComplemento(javax.swing.JLabel lblComplemento) {
+        this.lblComplemento = lblComplemento;
+    }
+
+    public javax.swing.JLabel getLblEmail() {
+        return lblEmail;
+    }
+
+    public void setLblEmail(javax.swing.JLabel lblEmail) {
+        this.lblEmail = lblEmail;
+    }
+
+    public javax.swing.JLabel getLblEstado() {
+        return lblEstado;
+    }
+
+    public void setLblEstado(javax.swing.JLabel lblEstado) {
+        this.lblEstado = lblEstado;
+    }
+
+    public javax.swing.JLabel getLblNumero() {
+        return lblNumero;
+    }
+
+    public void setLblNumero(javax.swing.JLabel lblNumero) {
+        this.lblNumero = lblNumero;
+    }
+
+    public javax.swing.JLabel getLblPais() {
+        return lblPais;
+    }
+
+    public void setLblPais(javax.swing.JLabel lblPais) {
+        this.lblPais = lblPais;
+    }
+
+    public javax.swing.JLabel getLblRazaoSocial() {
+        return lblRazaoSocial;
+    }
+
+    public void setLblRazaoSocial(javax.swing.JLabel lblRazaoSocial) {
+        this.lblRazaoSocial = lblRazaoSocial;
+    }
+
+    public javax.swing.JLabel getLblRua() {
+        return lblRua;
+    }
+
+    public void setLblRua(javax.swing.JLabel lblRua) {
+        this.lblRua = lblRua;
+    }
+
+    public javax.swing.JLabel getLblSetorAtuacao() {
+        return lblSetorAtuacao;
+    }
+
+    public void setLblSetorAtuacao(javax.swing.JLabel lblSetorAtuacao) {
+        this.lblSetorAtuacao = lblSetorAtuacao;
+    }
+
+    public javax.swing.JLabel getLblSite() {
+        return lblSite;
+    }
+
+    public void setLblSite(javax.swing.JLabel lblSite) {
+        this.lblSite = lblSite;
+    }
+
+    public javax.swing.JLabel getLblTelefone() {
+        return lblTelefone;
+    }
+
+    public void setLblTelefone(javax.swing.JLabel lblTelefone) {
+        this.lblTelefone = lblTelefone;
+    }
+
+    public javax.swing.JRadioButton getRbtOrdenaRegistroPorNome() {
+        return rbtOrdenaRegistroPorNome;
+    }
+
+    public void setRbtOrdenaRegistroPorNome(javax.swing.JRadioButton rbtOrdenaRegistroPorNome) {
+        this.rbtOrdenaRegistroPorNome = rbtOrdenaRegistroPorNome;
+    }
+
+    public javax.swing.JTextField getTxtBuscaRegistro() {
+        return txtBuscaRegistro;
+    }
+
+    public void setTxtBuscaRegistro(javax.swing.JTextField txtBuscaRegistro) {
+        this.txtBuscaRegistro = txtBuscaRegistro;
+    }
+
+    public javax.swing.JTextField getTxtRazaoSocial() {
+        return txtRazaoSocial;
+    }
+
+    public void setTxtRazaoSocial(javax.swing.JTextField txtRazaoSocial) {
+        this.txtRazaoSocial = txtRazaoSocial;
+    }
+
+    public javax.swing.JTextField getTxtSetorAtuacao() {
+        return txtSetorAtuacao;
+    }
+
+    public void setTxtSetorAtuacao(javax.swing.JTextField txtSetorAtuacao) {
+        this.txtSetorAtuacao = txtSetorAtuacao;
+    }
 }
